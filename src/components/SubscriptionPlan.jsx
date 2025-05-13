@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const SubscriptionPlan = () => {
   const [studyLength, setStudyLength] = useState("");
   const [adventure, setAdventure] = useState("");
-  const [reviewers, setReviewers] = useState(9);
+  const [reviewers, setReviewers] = useState(0);
 
   const chooseStudyLength = (choice) => {
     setStudyLength(choice);
@@ -21,7 +21,7 @@ const SubscriptionPlan = () => {
   const resetForm = () => {
     setStudyLength("");
     setAdventure("");
-    setReviewers(9);
+    setReviewers(0);
   };
 
   // Calculate price
@@ -133,12 +133,12 @@ const SubscriptionPlan = () => {
       {/* Buttons */}
       <div className="flex justify-end mt-6 space-x-4">
         <button
-          className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700"
+          className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 cursor-pointer"
           onClick={resetForm}
         >
           Reset
         </button>
-        <button className="px-6 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-600">
+        <button className="px-6 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-600 cursor-pointer">
           Sign up & launch
         </button>
       </div>
