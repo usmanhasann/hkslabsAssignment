@@ -17,6 +17,13 @@ const SubscriptionPlan = () => {
     setReviewers(parseInt(e.target.value));
   };
 
+  // Reset form to initial state
+  const resetForm = () => {
+    setStudyLength("");
+    setAdventure("");
+    setReviewers(9);
+  };
+
   // Calculate price
   let price = 0;
   if (studyLength === "short") {
@@ -53,7 +60,7 @@ const SubscriptionPlan = () => {
                 }`}
                 onClick={() => chooseStudyLength("short")}
               >
-                Short
+                Short & Focused
               </div>
               <div
                 className={`p-2 rounded-lg cursor-pointer border-2 ${
@@ -63,7 +70,7 @@ const SubscriptionPlan = () => {
                 }`}
                 onClick={() => chooseStudyLength("long")}
               >
-                Long
+                Long & Detailed
               </div>
             </div>
           </div>
@@ -100,7 +107,7 @@ const SubscriptionPlan = () => {
                 }`}
                 onClick={() => chooseAdventure("self")}
               >
-                Run Yourself
+                Run the study myself
               </div>
               <div
                 className={`p-2 rounded-lg cursor-pointer border-2 ${
@@ -110,7 +117,7 @@ const SubscriptionPlan = () => {
                 }`}
                 onClick={() => chooseAdventure("expert")}
               >
-                Expert Help
+                Have an expert to do it
               </div>
             </div>
           </div>
@@ -125,7 +132,10 @@ const SubscriptionPlan = () => {
 
       {/* Buttons */}
       <div className="flex justify-end mt-6 space-x-4">
-        <button className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700">
+        <button
+          className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700"
+          onClick={resetForm}
+        >
           Reset
         </button>
         <button className="px-6 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-600">
