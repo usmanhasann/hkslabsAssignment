@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const SubscriptionPlan = () => {
   const [studyLength, setStudyLength] = useState("");
   const [adventure, setAdventure] = useState("");
-  const [reviewers, setReviewers] = useState(9);
+  const [reviewers, setReviewers] = useState(0);
 
   const chooseStudyLength = (choice) => {
     setStudyLength(choice);
@@ -38,9 +38,9 @@ const SubscriptionPlan = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto mt-[1rem]">
+    <div className="max-w-5xl mx-auto mt-[1rem]">
       {/* Header label */}
-      <div className="text-center mb-2">
+      <div className="text-center">
         <div className="inline-block bg-gray-800 text-white rounded-b-lg px-8 py-1">
           <p className="uppercase text-xs">PAY ONLY FOR WHAT YOU USE</p>
         </div>
@@ -49,7 +49,7 @@ const SubscriptionPlan = () => {
       <div className="bg-gray-900 text-white rounded-lg shadow-lg relative overflow-hidden">
         <div className="p-8 pt-12 grid grid-cols-3 gap-6">
           {/* Left side options */}
-          <div className="col-span-2 space-y-10">
+          <div className="col-span-2 space-y-4">
             {/* Study Length */}
             <div>
               <h3 className="text-lg font-semibold mb-4">Study Length</h3>
@@ -123,9 +123,9 @@ const SubscriptionPlan = () => {
                   max="20"
                   value={reviewers}
                   onChange={handleSliderChange}
-                  className="absolute top-0 w-full h-1 opacity-0 cursor-pointer"
+                  className="absolute top-0 w-full  opacity-0 cursor-pointer"
                 />
-                <div className="mt-4 text-gray-400">{reviewers} Reviewers</div>
+                <div className="mt-1 text-gray-400">{reviewers} Reviewers</div>
               </div>
             </div>
 
@@ -205,7 +205,7 @@ const SubscriptionPlan = () => {
             Sign up and launch in minutes
           </button>
         </div>
-        <div className="text-center pb-4 text-gray-400 text-sm">
+        <div className="text-right pb-4 text-gray-400 text-sm">
           No credit card required until you're ready to launch your study.
         </div>
       </div>
